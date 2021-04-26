@@ -9,7 +9,7 @@
       </q-card-section>
       <q-separator />
       <q-card-section>
-            <q-item-label v-if="disabled" caption>{{projeto.descricao}}</q-item-label>
+            <q-item-label v-if="disabled" caption>{{projeto.descrição}}</q-item-label>
             <q-input borderless v-model="descrição" v-if="!disabled" class="col-12" label="Descrição do projeto">
       </q-card-section>
       <q-separator />
@@ -134,6 +134,7 @@ export default {
       this.dataInicio = FormataStringData(this.projeto.data_inicio)
       this.nomeDoProjeto = this.projeto.nome_do_projeto
       this.descrição = this.projeto.descrição
+      console.log(this.projeto.descrição)
       this.finalizado = this.projeto.finalizada === 1
       this.id = this.projeto.id
       this.porcentagem = this.projeto.porcentagem / 100
