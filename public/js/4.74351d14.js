@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[4],{"751b":function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("\nteste\n")])},s=[],i={name:"PageAtividades"},l=i,u=t("2877"),c=Object(u["a"])(l,a,s,!1,null,null,null);n["default"]=c.exports}}]);

@@ -27,6 +27,8 @@ Route::post('/api/projetos',[Projetos::class, 'create']);
 Route::delete('/api/projetos/{id}', [Projetos::class, 'delete']);
 //atualizações
 Route::put('/api/projetos/{id}',[Projetos::class, 'update']);
+//finalizar projeto/atividades
+Route::put('/api/projetos/finalizar/{id}',[Projetos::class, 'finish']);
 //fim projetos
 
 //Atividades
@@ -34,18 +36,19 @@ Route::put('/api/projetos/{id}',[Projetos::class, 'update']);
 Route::get('/api/atividades',[Atividades::class, 'readAll']);
 //leitura
 Route::get('/api/atividades/{id}',[Atividades::class, 'read']);
+
+Route::get('/api/atividades/projeto/{id}',[Atividades::class, 'readFromProject']);
+
 //criar
 Route::post('/api/atividades',[Atividades::class, 'create']);
 //excluir
 Route::delete('/api/atividades/{id}', [Atividades::class, 'delete']);
 //atualizações
 Route::put('/api/atividades/{id}',[Atividades::class, 'update']);
+
 //fim projetos
 
-// Route::get('{any}',function() {
-//     return view ( 'app' );
-// })->where('any','.*');
-
+//rotas quasar
 Route::get('/',function() {
     return view ( 'app' );
 });
@@ -57,3 +60,4 @@ Route::get('/informacoes',function() {
 Route::get('/informacoes/{id}',function() {
     return view ( 'app' );
 });
+//fim rotas quasar

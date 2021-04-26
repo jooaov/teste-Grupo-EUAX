@@ -1,35 +1,61 @@
 <template>
-<div class="row">
-    <CardProjeto
-    v-for="item in projetos"
-    :key="item"
-    :disabled="true"
-    />
+<div>
+  <div>
+    <h4>Progresso total</h4>
+    <q-linear-progress rounded size="20px" :value="porcentagem" color="blue" class="q-mt-sm" >
+      <div class="absolute-full flex flex-center">
+        <q-badge color="white" text-color="accent" :label="porcentagemCampo" />
+      </div>
+    </q-linear-progress>
+  </div>
+  <div class="row">
+      <CardProjeto
+      v-for="projeto in projetos"
+      :key="projeto.id"
+      :disabled="true"
+      :projeto="projeto"
+      />
 
-    <CardProjeto :disabled="false"/>
+      <CardProjeto :disabled="false"/>
+  </div>
 </div>
 </template>
 
 <script>
 import CardProjeto from 'src/components/cardProjeto.vue'
+import { axiosInstance } from 'src/tools/axios'
 
 export default {
   name: 'PageIndex',
   components: { CardProjeto },
   data () {
     return {
-      projetos: [1, 2, 3, 4, 5, 6, 7, 8]
+      projetos: [],
+      porcentagem: 0.5,
+      porcentagemCampo: '0%'
     }
   },
   methods: {
-    forgotPassword () {
-    }
-  }
+    getProjetos () {
+      axiosInstance.get('/api/projetos').then(
+        (response) => {
+          if (response.data.length !== 0) {
+            const porcentagem = response.data.pop()
+            this.porcentagem = porcentagem / 100
 
+            const porcentagemCompleta = this.porcentagem * 100
+            this.porcentagemCampo = porcentagemCompleta + '%'
+
+            this.projetos = response.data
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+  },
+  beforeMount () {
+    this.getProjetos()
+  }
 }
 </script>
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 250px
-</style>
