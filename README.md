@@ -13,21 +13,25 @@ Em `routes/web.php` é definido as rotas do backend que direcionam para `app/Htt
 O projeto `quasar` esta em `/quasarapp`,lá é definido as rotas para as paginas em `src/router/routes.js`,lá o grupo de rotas define um layout que está em `src/layouts/MainLayout.js` que nesse casso define o header de todas as paginas.Em `src\pages` estão salvos as paginas que usam os componentes que estão em `src/components`.
 A conecxão do quasar com o laravel é feito via axios definido em `src/tools/axios.js`.
 
+## executar
+
+com o laravel e o NPM instalado execute o comando `npm run server`,ele será executado em `http://127.0.0.1:8000`
+
 ## Funcionalidades
 
-- [x] Mostrar projetos
-- [x] Novo Projeto
-- [x] Editar Projeto
-- [x] Apagar Projeto
-- [x] Porcentagem finalizada dos projetos
-- [x] Porcentagem individual de conclusão dos projetos
-- [x] Data inicial e final dos projetos
-- [x] Projeto Finalizado
-- [x] Projeto Atrasado
-- [x] Descrição do Projeto
+-   [x] Mostrar projetos
+-   [x] Novo Projeto
+-   [x] Editar Projeto
+-   [x] Apagar Projeto
+-   [x] Porcentagem finalizada dos projetos
+-   [x] Porcentagem individual de conclusão dos projetos
+-   [x] Data inicial e final dos projetos
+-   [x] Projeto Finalizado
+-   [x] Projeto Atrasado
+-   [x] Descrição do Projeto
 
-* [x] Mostrar atividade
-* [x] Nova atividade
-* [x] Editar atividade
-* [x] Apagar atividade
-* [x] Verificação de datas
+*   [x] Mostrar atividade
+*   [x] Nova atividade
+*   [x] Editar atividade
+*   [x] Apagar atividade
+*   [x] Verificação de datas
