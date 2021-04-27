@@ -15,7 +15,7 @@ A conecxão do quasar com o laravel é feito via axios definido em `src/tools/ax
 
 ## executar
 
-com o laravel e o NPM instalado execute o comando `npm run server`,ele será executado em `http://127.0.0.1:8000`
+com o laravel e o NPM instalado conecte o banco de dados `mySql` com as tabelas de `mysql.sql` em .env, execute o comando `npm run server`,ele será executado em `http://127.0.0.1:8000`
 
 ## Funcionalidades
 
