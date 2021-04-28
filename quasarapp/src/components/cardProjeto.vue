@@ -54,7 +54,7 @@ export default {
       nomeDoProjeto: '',
       descrição: '',
       editar: false,
-      porcentagem: 0.5,
+      porcentagem: 0.0,
       porcentagemCampo: '0%',
       id: 0
     }
@@ -65,8 +65,8 @@ export default {
         .then(
           (response) => {
             console.log(response)
-            this.fechar()
             location.reload()
+            this.fechar()
           })
         .catch((error) => {
           console.log(error)

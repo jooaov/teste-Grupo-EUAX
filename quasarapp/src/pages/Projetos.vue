@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       projetos: [],
-      porcentagem: 0.5,
+      porcentagem: 0.0,
       porcentagemCampo: '0%'
     }
   },
